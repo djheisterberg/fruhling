@@ -1,0 +1,102 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <properties>
+        <scala.major>2.11</scala.major>
+        <scala.version>${scala.major}.1</scala.version>
+        <slick.version>2.1.0-RC1</slick.version>
+        <liquibase.version>3.1.1</liquibase.version>
+        <liquibase-slf4j.version>1.2.1</liquibase-slf4j.version>
+        <vertx.version>2.1</vertx.version>
+        <vertx-scala.version>1.0.0</vertx-scala.version>
+        <config.version>1.2.1</config.version>
+        <bonecp.version>0.8.0.RELEASE</bonecp.version>
+        <c3p0.version>0.9.5-pre8</c3p0.version>
+        <commons-dbcp.version>2.0.1</commons-dbcp.version>
+        <hikari.version>1.4.0</hikari.version>
+        <slf4j.version>1.7.7</slf4j.version>
+        <derby.version>10.10.2.0</derby.version>
+        <h2.version>1.4.179</h2.version>
+        <hsql.version>2.3.2</hsql.version>
+        <mysql.version>5.1.31</mysql.version>
+        <postgres.version>9.3-1102-jdbc41</postgres.version>
+        <mockito.version>1.9.5</mockito.version>
+        <junit.version>4.11</junit.version>
+    </properties>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.djheisterberg.fruhling</groupId>
+    <artifactId>fruhling_2.11</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>3.1.6</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>add-source</goal>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.5.0</version>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>typesafe</id>
+            <url>http://repo.typesafe.com/typesafe/maven-releases/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe</groupId>
+            <artifactId>config</artifactId>
+            <version>${config.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <modules>
+        <module>fruhling-db</module>
+    </modules>
+</project>
