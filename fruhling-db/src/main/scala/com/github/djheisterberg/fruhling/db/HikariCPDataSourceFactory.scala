@@ -9,7 +9,7 @@ package com.github.djheisterberg.fruhling.db {
     override def apply(config: Config) = {
       val hikariConfig = new HikariConfig()
       hikariConfig.setDriverClassName(driver(config))
-      hikariConfig.addDataSourceProperty("jdbcUrl", url(config))
+      hikariConfig.setJdbcUrl(url(config))
       hikariConfig.addDataSourceProperty("user", username(config))
       hikariConfig.addDataSourceProperty("password", password(config))
 
