@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.github.djheisterberg.fruhling</groupId>
         <artifactId>fruhling_2.11</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
     <artifactId>fruhling-db_2.11</artifactId>
     <packaging>bundle</packaging>
