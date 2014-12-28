@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.github.djheisterberg.fruhling</groupId>
         <artifactId>fruhling_2.11</artifactId>
-        <version>0.0.1</version>
+        <version>0.0.2-SNAPSHOT</version>
     </parent>
     <artifactId>fruhling-db_2.11</artifactId>
     <packaging>bundle</packaging>
@@ -75,7 +75,7 @@
         </dependency>
         <dependency>
             <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
+            <artifactId>HikariCP-java6</artifactId>
             <version>${hikari.version}</version>
             <optional>true</optional>
         </dependency>
