@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.github.djheisterberg.fruhling</groupId>
         <artifactId>fruhling_2.11</artifactId>
-        <version>0.0.2-SNAPSHOT</version>
+        <version>0.0.2</version>
     </parent>
     <artifactId>fruhling-db_2.11</artifactId>
     <packaging>bundle</packaging>
@@ -30,12 +30,24 @@
             <groupId>com.typesafe.slick</groupId>
             <artifactId>slick_${scala.major}</artifactId>
             <version>${slick.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.scala-lang</groupId>
+                    <artifactId>scala-library</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.typesafe.slick</groupId>
             <artifactId>slick-extensions_${scala.major}</artifactId>
             <version>${slick.version}</version>
             <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.scala-lang</groupId>
+                    <artifactId>scala-library</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.liquibase</groupId>
@@ -54,6 +66,12 @@
             <artifactId>liquibase-slf4j</artifactId>
             <version>${liquibase-slf4j.version}</version>
             <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.liquibase</groupId>
+                    <artifactId>liquibase-core</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.jolbox</groupId>
@@ -75,7 +93,7 @@
         </dependency>
         <dependency>
             <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP-java6</artifactId>
+            <artifactId>HikariCP</artifactId>
             <version>${hikari.version}</version>
             <optional>true</optional>
         </dependency>
